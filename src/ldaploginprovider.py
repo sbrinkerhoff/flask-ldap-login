@@ -42,7 +42,5 @@ class LDAPLoginProvider(LoginProviderInterface):
             return user
 
         except ldap.INVALID_CREDENTIALS as e:
-            self.log(e)
+            logging.info(e)
             raise ValueError(e)
-
-    
