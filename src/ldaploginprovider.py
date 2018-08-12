@@ -41,9 +41,8 @@ class LDAPLoginProvider(LoginProviderInterface):
             user.displayName = u[0][1]['displayName'][0]
             return user
 
-        except ldap.INVALID_CREDENTIALS, e:
+        except ldap.INVALID_CREDENTIALS as e:
             self.log(e)
             raise ValueError(e)
 
-    def log(self, msg):
-        print "LDAPLoginProvider: %s" % msg
+    

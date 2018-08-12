@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import datetime
 import json
 from flask import Flask, redirect, request, session, render_template
@@ -29,7 +29,7 @@ def controller_default():
 @app.route("/login", methods=["GET"])
 def controller_login():
     msg = ""
-    print session
+    
     if session.get('err'):
         msg = session.get('err')
         del session['err']
